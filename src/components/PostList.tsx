@@ -52,8 +52,8 @@ export default function PostList({ initialPosts, initialTotal }: Props) {
         </div>
       ) : (
         <div className="space-y-3">
-          {posts.map((post) => (
-            <PostCard key={post.id} post={post} />
+          {posts.map((post, i) => (
+            <PostCard key={post.id} post={post} num={total - (page - 1) * PAGE_SIZE - i} />
           ))}
         </div>
       )}

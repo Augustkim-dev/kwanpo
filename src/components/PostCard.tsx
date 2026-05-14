@@ -4,13 +4,15 @@ import { formatDate } from "@/lib/utils";
 
 interface Props {
   post: Post;
+  num: number;
 }
 
-export default function PostCard({ post }: Props) {
+export default function PostCard({ post, num }: Props) {
   return (
     <Link href={`/posts/${post.id}`}>
       <article className="bg-white border border-gray-100 rounded-xl p-4 hover:shadow-md hover:border-yellow-200 transition-all cursor-pointer">
         <div className="flex items-center gap-2 mb-2">
+          <span className="text-xs text-gray-400 font-mono w-8 shrink-0">#{num}</span>
           <span className="font-semibold text-gray-800">{post.nickname}</span>
           <span className="text-xs text-gray-400">{formatDate(post.created_at)}</span>
         </div>
