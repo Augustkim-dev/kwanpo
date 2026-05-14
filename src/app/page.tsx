@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import PostList from "@/components/PostList";
 import { supabase } from "@/lib/supabase";
 
